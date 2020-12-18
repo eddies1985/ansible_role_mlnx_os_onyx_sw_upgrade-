@@ -1,0 +1,14 @@
+---
+# vars file for mlnx_os_onyx_sw_upgrade
+  force_upgrade_downgrade: False
+  fetch: True
+  transfer_protocol: scp
+  server_ip: ""
+  server_user: ""
+  server_password: ""
+  img_file: ""
+  fail_on_file: True
+  destination_folder: /var/opt/tms/images/
+  reload: True
+  e_config_backup: true
+  config_backup: "{{ e_config_backup  | bool }}"
