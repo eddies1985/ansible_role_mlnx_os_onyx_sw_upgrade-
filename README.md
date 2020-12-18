@@ -9,15 +9,12 @@ ansible modules:
 
 onyx_config
 onyx_command
+
 python module scp - pip install scp
 
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-
 
 force_upgrade_downgrade: If we want to allow a downgrade situation where we may end up with a factory configuration if false then the local ansible server will use the net_put ansible module.  default - False
 fetch:                   The switch will copy the image from the server using the "image fetch" command.  default - True
