@@ -43,7 +43,7 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
 ---
-- name: EddieS_Playbook
+- name: upgrade_switches
   hosts: ONYX
   gather_facts: no
   strategy: free
@@ -66,7 +66,7 @@ Including an example of how to use your role (for instance, with variables passe
     config_backup: "{{ e_config_backup  | bool }}"
   remote_user: admin
   roles:
-    - { role: mlnx_os_onyx_sw_upgrade , tags: ['onyx_upgrade']}
+    - { role: eddies1985.mlnx_os_onyx_sw_upgrade , tags: ['onyx_upgrade']}
 
 
 
