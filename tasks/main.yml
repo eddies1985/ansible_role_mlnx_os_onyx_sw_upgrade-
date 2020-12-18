@@ -7,7 +7,7 @@
 # save the onyx version as a fact named current_version
 - name: set_fact_current_version
   set_fact:
-    current_version: "{{curr_version.stdout[0].split()[1] }}"
+    current_version: "{{ curr_version.stdout[0].split()[1] }}"
   # print the current version
 - name: print_current_version
   debug:
@@ -23,7 +23,7 @@
 
 - name: file_doesnt_exists
   fail:
-    msg: "file {{img_file}} doesnt exist"
+    msg: "file {{ img_file }} doesnt exist"
   when:
      - not file_exists.stat.exists
      - fail_on_file | bool
@@ -51,7 +51,7 @@
 # fetch the image file using a cli command
   - name: fetch_image
     onyx_command:
-        commands: image fetch {{transfer_protocol}}://{{server_user}}:{{server_password}}@{{server_ip}}:/{{img_file}}
+        commands: image fetch {{ transfer_protocol }}://{ {server_user }}:{{ server_password }}@{{ server_ip} }:/{{ img_file }}
     tags: fetch_image
     when:
       - fetch | bool
@@ -119,7 +119,7 @@
     # print the new version after reboot
   - name: print_new_version
     debug:
-      msg: "New version after upgrade: {{new_version.stdout}}"
+      msg: "New version after upgrade: {{ new_version.stdout }}"
     tags: print_new_version
   when:
   - file_exists.stat.exists
